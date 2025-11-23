@@ -1,0 +1,688 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+    --primary:#4D20F0;
+    --noir: #2F2F2F;
+    --blanc:#fff;
+    --translucid: #EFEFEF;
+    --grey1: #555555;
+    --grey2: #8B8B8B;
+    --grey3: #626262;
+    --etu1: #FFEA00;
+    --etu2: #CD82FF;
+    --etu3: #44F072;
+    --etu4: #FF6E86;
+    --etu5: #FFA62A;
+    --etu6: #78A3FF;
+    --stat1: #2050F0;
+    --stat2: #C9BAFF;
+    --stat3: #60BAFF;
+    --stat4: #7953FF;
+    --stat5: #0072C8;
+    --stat6: #00B1D7;
+}
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 1rem;
+    color: var(--grey3);
+}
+#content{
+    display: grid;
+    gap: 25px;
+    width: auto;
+    padding: 25px 25px;
+}
+
+section{
+    border-radius: 24px;
+    border: solid 2px var(--translucid);
+    padding: 20px;
+    width: calc(100% -40px);
+    overflow: hidden;
+/*box-shadow: 0 8px 12px 6px rgba(0, 0, 0, 0.06), 0 4px 4px 0 rgba(0, 0, 0, 0.07);*/
+}
+
+.entete {
+    display: grid;
+    row-gap: 12px;
+}
+
+.entete-presentation {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto auto;
+    gap: 8px;
+}
+
+.logo-univ {
+    grid-row: 1/3;
+    grid-column: 1/2;
+    max-height: 40px;
+    margin: auto 0;
+}
+
+.intitulé-master {
+    grid-column: 2/3;
+    width: 100%;
+    height: fit-content;
+    font-size: 22px;
+}
+
+.entete a {
+    grid-column: span 2;
+    justify-self: center;
+    padding: 8px 20px;
+}
+
+.partage-master {
+    border: 1px solid var(--translucid);
+    border-radius: 6px;
+    text-align: center;
+    width: calc(100% - 40px);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+.postule-master {
+    border: 1px solid var(--stat4);
+    border-radius: 6px;
+    text-align: center;
+    width: calc(100% - 40px);
+    color: var(--stat4);
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+}
+.partage-master::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/svg/partager-icon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.postule-master::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/svg/postuler-icon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.entete-info {
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    grid-column: auto;
+    row-gap: 1rem;
+}
+
+.carte-etablissement, .carte-suggestion{
+    border-radius: 12px;
+}
+.carte-etablissement *, .carte-suggestion *{
+    border: none !important;
+}
+.carte-etablissement a, .carte-suggestion a{
+    color: var(--grey1) !important;
+    border-radius: 8px !important;
+    background-color: white !important;
+    border: solid 1px var(--translucid)!important;
+    padding: 0;
+}
+.carte-etablissement,
+.domaine,
+.capacite,
+.alternance {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.entete-info p {
+    width: fit-content;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.domaine p::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    background-color: var(--etu3);
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+}
+
+
+
+.insertion-stats ul li {
+    min-height: 350px;
+}
+/*carte master*/
+.carte-master{
+    display: inline-grid;
+    background-color: var(--blanc);
+    padding: 16px;
+    justify-content: center;
+    gap: 0.8rem;
+    border: 0.5px solid var(--translucid);
+    border-radius: 16px;
+}
+.carte-master img{
+    padding: 16px;
+}
+.carte-master div{
+    display: flex;
+    gap: 0.8rem;
+}
+.tag-domain1{
+    border-radius: 1rem;
+    border: 0.5px solid var(--translucid);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.16px;
+}
+.tag-domain2{
+    border-radius:1rem;
+    padding: 0.16px;
+     border: 0.5px solid var(--translucid);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+.tag-domain1::before{
+    content: "";
+    display: block;
+    background-color: var(--etu3);
+    border-radius: 50%;
+    width: 0.75em;
+    height: 0.75em;
+}
+
+.tag-domain2::before{
+    content: "";
+    display: block;
+    background-color: var(--etu6);
+    border-radius: 50%;
+    width: 0.75em;
+    height: 0.75em;
+}
+.carte-master p{
+    color: var(--grey2);
+}
+
+
+/*suggest card*/
+.suggest-carte{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.suggest-geo, .suggest-form{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+/*statistique*/
+
+/*button*/
+.admission-stats li button, .insertion-stats li button{
+    padding: 8px 20px;
+    font-size: 1.125rem;
+    color: var(--grey3);
+    font-family: "Hanken Grotesk", sans-serif;
+    background-color: var(--blanc);
+    border: solid 1px var(--translucid);
+    border-radius: 8px;
+    transition: color 200ms ease-out;
+    cursor: pointer;
+    width: fit-content;
+    height: fit-content;
+    grid-row: 3/4;
+}
+.btn2023{
+    margin-left: auto;
+}
+.btn2024{
+    margin-right: auto;
+}
+.admission-stats button.active, .insertion-stats button.active{
+    color: var(--blanc);
+    background-color: var(--primary);
+    cursor: auto;
+}
+
+.admission-stats, .insertion-stats{
+position:relative;
+overflow: hidden;
+height: fit-content;
+padding-bottom: 80px;
+}
+.slider-controls{
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    display: flex;
+    gap: 8px;
+}
+.slider-controls button{
+    width: 8px;
+    height: 8px;
+    border-radius: 1000px;
+    background-color: var(--primary);
+    border: none;
+    opacity: 50%;
+    transition: all 100ms ease-out; 
+}
+.slider-controls button:hover, .slider-controls .active{
+    opacity: 100%;
+}
+.slider-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 1000px;
+    border: none;
+    background-color: var(--primary);
+    transition: all 250ms ease-out; 
+    z-index: 10000;
+}
+.slider-btn:hover{
+    width: 45px;
+    height: 45px;
+}
+.slider-btn.prev{
+    position: absolute;
+    bottom: 50%;
+    left: 12px;
+    transform: translateY(50%);
+}
+.slider-btn.next{
+    position: absolute;
+    bottom: 50%;
+    right: 12px;
+    transform: translateY(50%) rotate(180deg);
+}
+
+.admission-stats > ul, .insertion-stats > ul{
+ display: flex;
+ width: fit-content;
+ gap: 60px;
+ transition: all 500ms ease-out;
+ position: static;
+}
+
+.admission-stats > ul li{
+ width: calc(100vw - 90px);
+ display: grid;
+ grid-template-columns: 1fr 1fr;
+ grid-template-rows: auto;
+ justify-content: center;
+ gap: 12px;
+ position: static;
+   }
+
+   .insertion-stats > ul li{
+    display: grid;
+    grid-template-columns: auto;
+    width: calc(100vw - 90px);
+    position: static;
+   }
+
+   .admission-stats > ul li h3, .insertion-stats > ul li h3{
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 300ms ease-out;
+   }
+
+   .admission-stats > ul .active h3, .insertion-stats > ul .active h3{
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 400ms;
+   }
+
+
+.stat{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    width: 100%;
+}
+
+.admission-stats .stat{
+    grid-column: 1/3;
+}
+
+.insertion-stats .stat div :first-child{
+    width: 100% !important;
+}
+
+.stat-tag{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.container-stat-tag{
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+.stat-tag::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 1000px;
+    background-color: var(--tag-color);
+}
+.carte-suggestion{
+    min-height: 350px;
+}
+
+.marker-cluster-small,
+.marker-cluster-medium,
+.marker-cluster-large {
+  background-color: var(--stat1);
+}
+
+.marker-cluster-small div,
+.marker-cluster-medium div,
+.marker-cluster-large div {
+    background-color: var(--stat1);
+  color: #fff;
+}
+
+.section-persona{
+    display: grid;
+    gap: 12px;
+    }
+    .section-persona img{
+    width: 70%;
+    object-fit: contain;
+    transform: translateY(20%);
+    }
+    .presentation-persona{
+    border-radius: 12px;
+    padding: 20px;
+    background: url(../images/fond-persona.webp);
+    background-size: cover;
+    overflow: hidden;
+    }
+    .habitudes-de-vie-persona{
+    border-radius: 12px;
+    padding: 20px;
+    background: url(../images/fond-habitudes-de-vie.webp);
+    background-size: cover;
+    overflow: hidden;
+    }
+    .parcours-de-vie-persona{
+    border-radius: 12px;
+    padding: 20px;
+    background: url(../images/fond-parcours-scolaire.webp);
+    background-size: cover;
+    overflow: hidden;
+    }
+    .textes-persona{
+    background-color: #ffffffa3;
+    backdrop-filter: blur(30px);
+    border: solid 1px var(--translucid);
+    padding: 20px;
+    border-radius: 12px;
+    
+    }
+
+    .conseil-etablissement {
+        background: #FFFFFF;
+        border: 1px solid #EFEFEF;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    /* Titre */
+    .conseil-titre {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .conseil-titre img {
+        width: 118px;
+        height: auto;
+    }
+    
+    .conseil-titre h2 {
+        font-family: "Hanken Grotesk", sans-serif;
+        font-size: 26px;
+        font-weight: 700;
+        color: #2F2F2F;
+        line-height: 32px;
+    }
+    
+    /* Bloc global */
+    .conseil-etablissement {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+
+    
+    
+    /* Cartes internes */
+    .disciplines-conseilles,
+    .qualite-a-avoir{
+        list-style: none;
+        display: flex;
+        gap: 8px;
+        padding: 20px 0;
+        width: fit-content;
+        overflow: hidden;
+    }
+    
+    .container-discipline-conseilles,
+    .container-qualite-a-avoir {
+        width: calc(100vw - 40px);
+        height: fit-content;
+        overflow: auto;
+    }
+    
+    .card-disciplines-conseilles,
+    .card-qualite-a-avoir {
+        background: #ffffff;
+        border: 1px solid var(--translucid);
+        border-radius: 12px;
+        padding: 20px;
+        width: 300px;
+    }
+    
+    .card-disciplines-conseilles ul {
+        width: auto;
+        display: grid;
+        gap: 1px;
+        background-color: var(--translucid);
+    }
+    
+    .card-disciplines-conseilles ul li {
+        background-color: var(--blanc);
+        padding: 12px 0;
+    }
+    
+    .disciplines-conseilles p,
+    .qualite-a-avoir p {
+        font-family: "Hanken Grotesk", sans-serif;
+        font-size: 18px;
+        line-height: 23px;
+        color: #626262;
+    
+    }
+    
+    /* Numéros qualité (ex: 1) */
+    .qualite-a-avoir ul li h4 {
+        margin: 0 0 10px 0;
+        font-family: "Hanken Grotesk", sans-serif;
+        font-size: 22px;
+        font-weight: 700;
+        color: #2F2F2F;
+    }
+
+
+
+@media (min-width: 1200px) {
+
+
+    #content{
+        padding: 50px 50px;
+        width: calc(100% - 100px);
+    }
+
+    section{
+        padding: 50px;
+        width: calc(100% - 100px);
+    }
+
+    .admission-stats > ul li{
+        width: calc(100vw - 200px);
+          }
+          .entete-presentation {
+            grid-template-columns: auto 1fr auto auto;
+            grid-template-rows: auto auto;
+            column-gap: 30px;
+        }
+    
+        .intitulé-master {
+            grid-column: 2/3;
+            grid-row: 1/2;
+            height: fit-content;
+            margin-top: auto;
+        }
+    
+        .lieu {
+            grid-column: 2/3;
+            grid-row: 2/3;
+        }
+    
+        .logo-univ {
+            grid-column: 1/2;
+            grid-row: 1/3;
+            max-height: 60px;
+        }
+    
+        .postule-master {
+            grid-row: 1/3;
+            grid-column: 4/5;
+            height: fit-content;
+            width: fit-content;
+            margin: auto 0 !important;
+        }
+    
+        .partage-master {
+            grid-row: 1/3;
+            grid-column: 3/4;
+            height: fit-content;
+            width: fit-content;
+            margin: auto 0 !important;
+    
+        }
+    
+        .entete-info {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            gap: 12px;
+        }
+    
+        .domaine,
+        .capacite,
+        .alternance {
+            grid-column: 2/3;
+        }
+    
+        .carte-etablissement{
+            grid-row: 1/5;
+            grid-column: 1/2;
+        }
+
+  .suggest-carte {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr; /* Titre en 1Ã¨re ligne, contenu en 2Ã¨me ligne */
+    gap: 1rem;
+  }
+
+  .suggest-carte h2 {
+    display: grid;
+    grid-column: 1 / -1; /* Titre prend toute la largeur */
+    justify-content: center;
+  }
+
+  .suggest-geo {
+    grid-column: 1 / 2; /* 1Ã¨re colonne */
+  }
+
+  .suggest-form {
+    grid-column: 2 / 3; /* 2Ã¨me colonne */
+  }
+
+  .stat{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-stat-tag{
+    grid-column: 7/9;
+    grid-row: 1/2;
+}
+.stat :first-child{
+    grid-column: 1/7;
+}
+.admission-stats .stat :first-child{
+    width: 100% !important;
+}
+.stat-tag{
+    justify-content: start;
+}
+
+.presentation-persona{
+        display: flex;
+        height: 90vh;
+    }
+    .habitudes-de-vie-persona{
+        display: flex;
+        height: 90vh;
+    }
+    .parcours-de-vie-persona{
+        display: flex;
+        height: 90vh;
+    }
+    .textes-persona{
+height: fit-content;
+margin: auto 0;    
+    }
+    .section-persona img{
+        width: 60%;
+        object-fit: contain;
+        transform: translateY(20%);
+        }
+}
